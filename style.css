@@ -1,5 +1,5 @@
 .wrapper {
-	min-width: 800px;
+	min-width: 850px;
 	position:relative;
 	height: 100%;
 	width: 100%;
@@ -8,6 +8,33 @@
 * {
 	background: url('natural_paper.png');
 }
+
+
+/*@font-face {
+    font-family: 'ZnikomitRegular';
+    src: url('Znikomit-webfont.eot');
+    src: url('Znikomit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Znikomit-webfont.woff') format('woff'),
+         url('Znikomit-webfont.ttf') format('truetype'),
+         url('Znikomit-webfont.svg#ZnikomitRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+@font-face {
+    font-family: 'NixieOneRegular';
+    src: url('NixieOne-Regular-webfont.eot');
+    src: url('NixieOne-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('NixieOne-Regular-webfont.woff') format('woff'),
+         url('NixieOne-Regular-webfont.ttf') format('truetype'),
+         url('NixieOne-Regular-webfont.svg#NixieOneRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 
 #nav {
 	width: 150px;
@@ -19,8 +46,11 @@
 	padding: 0;
 	margin: 0 0 10px 0;
 	text-align: center;
-	font-family: "modulo";
-	font-weight: 700;
+	font-family: "Raleway";/*"NixieOneRegular";*/
+	font-size: 33px;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 #nav ul {
@@ -31,36 +61,66 @@
 	   -moz-transform:rotate(-90deg);
 	     -o-transform:rotate(-90deg);
 	    -ms-transform:rotate(-90deg);
-	    width: 50px;
+	    width: 100%;
 	    margin-left: auto;
 	    margin-right: auto;
+		position: relative;
+		text-align: right;
 }
 
 #nav ul li {
-	padding: 0 0 5px 0;
+	padding: 0 0 10px 0;
 	margin: 0;
 	list-style: none;
-	width: 50px;
-	font-family: "syncopate";
-	font-weight: 400;
+	width: 100%;
+	font-family: "Raleway";
+	letter-spacing: 0.3em;
+	font-weight: 300;
+	font-size: 23px;
+	text-transform: uppercase;
+}
 
+#nav ul li:last-child {
+	padding: 0;
+	margin:0;
 }
 
 .post {
 	width: 650px;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 100px;
+	margin-top: -11px;
+	float: left;
 }
 
 
 .post h1 {
-	font-family: 'modulo';
-	font-weight: 700;
+	font-family: 'Abril Fatface';
+	font-size: 59px;
+	font-style: normal;
+	font-weight: 400;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .post p {
-	font-family: 'SymLogiDINs Thing';
+	font-family: 'Raleway';
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 100;
+	line-height: 19px;
+}
+
+h5 {
+	font-family: "League Script";
+	text-transform: lowercase;
+	font-style: normal;
+	font-size: 15px;
+}
+
+h3 {
+	font-family: "NixieOneRegular";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+
 }
