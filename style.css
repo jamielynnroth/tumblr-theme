@@ -1,0 +1,66 @@
+.wrapper {
+	min-width: 800px;
+	position:relative;
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	background: url('natural_paper.png');
+}
+
+#nav {
+	width: 150px;
+	float:left;
+	margin: 25px;
+}
+
+#nav h2 {
+	padding: 0;
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-family: "modulo";
+	font-weight: 700;
+}
+
+#nav ul {
+	/*display: block;*/
+	padding: 0 0 0 0;
+	transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	   -moz-transform:rotate(-90deg);
+	     -o-transform:rotate(-90deg);
+	    -ms-transform:rotate(-90deg);
+	    width: 50px;
+	    margin-left: auto;
+	    margin-right: auto;
+}
+
+#nav ul li {
+	padding: 0 0 5px 0;
+	margin: 0;
+	list-style: none;
+	width: 50px;
+	font-family: "syncopate";
+	font-weight: 400;
+
+}
+
+.post {
+	width: 650px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+}
+
+
+.post h1 {
+	font-family: 'modulo';
+	font-weight: 700;
+}
+
+.post p {
+	font-family: 'SymLogiDINs Thing';
+	font-style: normal;
+	font-weight: normal;
+}
