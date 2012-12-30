@@ -1,8 +1,12 @@
+/* GLOBAL STYLES*/
+
 .wrapper {
 	min-width: 850px;
 	position:relative;
 	height: 100%;
 	width: 100%;
+	padding:0;
+	margin: 0;
 }
 
 .content {
@@ -11,9 +15,11 @@
 	position: relative;
 	margin-right: auto;
 	margin-left:auto;
+	margin-top: 0;
+	padding-top: 50px;
 }
 
-* {
+.wrapper {
 	background: url('natural_paper.png');
 }
 
@@ -30,6 +36,7 @@
 
 }*/
 
+/********************************** FONTS *********************************/
 @font-face {
     font-family: 'NixieOneRegular';
     src: url('NixieOne-Regular-webfont.eot');
@@ -41,18 +48,17 @@
     font-style: normal;
 }
 
-
-
-
-#nav {
-	width: 150px;
-	float:left;
-	margin: 25px;
-	height: 100%;
-/*	display: block;*/
+h1 {
+	font-family: 'Abril Fatface';
+	font-size: 59px;
+	font-style: normal;
+	font-weight: 400;
+	margin: 0;
+	padding-bottom: 20px;
+	line-height: 46px;
 }
 
-#nav h2 {
+h2 {
 	padding: 0;
 	margin: 0 0 10px 0;
 	text-align: center;
@@ -61,6 +67,44 @@
 	font-style: normal;
 	font-weight: 200;
 	text-transform: uppercase;
+}
+
+h3 {
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 22px;
+	line-height: 24px;
+	margin-top: 0;
+	padding: 0;
+}
+
+h5 {
+	font-family: "League Script";
+	text-transform: lowercase;
+	font-style: normal;
+	font-size: 17px;
+	padding-top: 0;
+	padding-bottom: 20px;
+	margin:0;
+}
+
+.updates p {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 100;
+	line-height: 20px;
+	padding-bottom:;
+}
+
+/********************************* NAVIGATION ********************************/
+
+#nav {
+	width: 150px;
+	float:left;
+	margin: 0; /*25px;*/
+	height: 100%;
+/*	display: block;*/
 }
 
 #nav ul {
@@ -95,75 +139,97 @@
 	margin:0;
 }
 
-.post {
+#nav img {
+	width: 150px;
+	height: 150px;
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+/******************************* GLOBAL POST *****************************/
+
+.updates li {
 	width: 620px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 0;
-	/*float: left;*/
+	list-style-type: none;
 	padding-bottom: 0;
-/*	display: block;*/
 }
 
-.updates {
-	margin-top: 0;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 75px;
-	width: 650px;
-	padding-left: 20px;
+hr {
+	margin: 25px 0;
 }
 
-img {
+/********************************* PHOTO *********************************/
+
+.post_photo img {
 	padding: 0 0 15px 0;
 }
 
-.post h1 {
-	font-family: 'Abril Fatface';
-	font-size: 59px;
-	font-style: normal;
-	font-weight: 400;
-	margin: 0;
-	padding-bottom: 0;
-	line-height: 46px;
+/********************************* LINK **********************************/
+
+.post_link a {
+	text-decoration: none; 
 }
 
-.post p {
-	font-family: 'Raleway';
-	font-style: normal;
-	font-weight: 100;
-	line-height: 19px;
-	padding-bottom:;
-}
+/********************************* CHAT ***********************************/
 
-h5 {
-	font-family: "League Script";
-	text-transform: lowercase;
-	font-style: normal;
-	font-size: 17px;
-	padding-top: 20px;
-	padding-bottom: 15px;
+.post_chat li {
+	display:inline;
+	padding: 0;
 	margin:0;
+	width: 100%;
+	text-indent: 0;
 }
 
-h3 {
-	font-family: "Forum"; /*"NixieOneRegular";*/
+.post_chat ul {
+	padding: 0;
+}
+
+.post_chat li span { 
+	/* Make chat ID's match <h3> style */
+	font-family: "Forum"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 22px;
 	line-height: 20px;
 	margin-top: 0;
 	padding: 0;
-
 }
 
-hr {
-	margin: 15px 0 15px 0;
+/***************************** PHOTOSET ************************************/
+
+.post_photoset img {
+	width: 186px;
+	float: left;
+	padding: 10px;
 }
 
+.post_photoset img:last-child {
+	padding-bottom: 20px;
+}
+
+.post_photoset hr {
+	clear:both;
+}
+
+#photoset {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/**************************** VIDEO ********************************/
+
+#video {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/***************************** FOOTER ******************************/
 .footer {
 	padding: 0;
 	margin: 0 0 0 50px;
-
-
 }

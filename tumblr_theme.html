@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{Title}</title>
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="stylesheet" href="style.css">
+	<!-- {block:Description}
+		<meta name="description" content"{MetaDescription}" />
+	{/block:Description} -->
+
+
+	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/wirewyrm" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Forum' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="content">
+		<div id="nav">
+			<h2>{Title}</h2>
+			
+			<hr>
+			
+			{block:HasPages}
+				{block:Pages}
+				<ul id="nav">
+					<li><a href="{URL}">{Label}</a></li>
+					<li><a href="{URL}">{Label}</a></li>
+					<li><a href="{URL}">{Label}</a></li>
+					<li><a href="{URL}">{Label}</a></li>
+				</ul>
+				{/block:Pages}
+			{/block:HasPages}
+		</div> <!-- #nav --> 
+		
+<ol id="posts">
+	{block:Posts}
+		{block:Text}
+		<li class="post text">
+			{block:Title}
+			<h1>{Title}</h1>
+			{/block:Title}
+
+			<h5>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h5>
+			
+			
+			{block:Caption}
+				<h3> {Caption} </h3>	
+			{/block:Caption}
+
+			<p>{Body}</p>
+
+	<!-- 		{block:PreviousPost} 
+				<a href="{PreviousPost"></a>
+			{/block:PreviousPost}
+
+			{block:NextPost} 
+				<a href="{NextPost}">Next</a>
+			{/block:NextPost} -->
+			
+			<hr>
+		</li>
+		{/block:Text}
+
+
+	{block:Photo}
+		<li class="post photo">
+			{block:Title}
+				<h1>{Title}</h1>
+			{/block:Title}
+			
+			<h5>by {PostAuthorName}, {ShortMonth}{DayOfMonth}, {Year}</h5>
+
+			{LinkOpenTag}
+				<img src="{PhotoURL-500}" alt="{PhotoAlt"/>
+			{LinkCloseTag}
+
+			
+			{block:Caption}
+			<h3> {Caption} </h3>	
+			{/block:Caption}
+
+			<p>{Body}</p>
+			
+			<hr>
+		</li>
+
+
+	{/block:Photo}
+	</ol><!-- #posts-->
+{/block:Posts}
+</div> <!--.content-->
+
+	<div class="footer">
+		<h5>© {PostAuthorName} {CopyrightYear}</h5>
+		  {block:PreviousPage}
+                <a href="{PreviousPage}">revious</a>
+          {/block:PreviousPage}
+
+          {block:NextPage}
+                <a href="{NextPage}">Next</a>
+          {/block:NextPage}
+	</div><!-- .footer -->
+
+</div><!-- .wrapper -->
+
+</body>
+
+</html>

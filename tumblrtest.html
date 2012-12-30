@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<title>{Title}</title>
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="stylesheet" href="style.css">
@@ -33,19 +33,25 @@
 <style type="text/css">
 
 .wrapper {
-	min-width: 850px;
+	min-width: 1050px;
 	position:relative;
 	height: 100%;
 	width: 100%;
 }
 
-.content {
+#content {
 	height: 100%;
-	width: 1020px;
+	width: 650px;
 	position: relative;
 	margin-right: auto;
 	margin-left:auto;
+    float: left;
+    margin-top: 0;
+	padding-top: 75px;
+	width: 650px;
+	padding-left: 20px;
 }
+
 
 * {
 	background: url('{image:background}');
@@ -124,7 +130,8 @@ h4 {
 /*Nav Styles*/
 
 #nav {
-	width: 150px;
+	min-width: 150px;
+    max-width: 300px;
 	float:left;
 	margin: 25px;
 	height: 100%;
@@ -166,23 +173,25 @@ h4 {
 }
 
 #nav form {
-	width: 150px;
+	width: 100%;
+    
 }
 
 #nav form input {
+    width: 100%;
+    background:white;
+}
 
+#query {
+    width: 100%;
+}
+
+#submit {
+    width: 75px;
 }
 
 /*Body Styles*/
 
-#content {
-	margin-top: 0;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 75px;
-	width: 650px;
-	padding-left: 20px;
-}
 
 
 #content li {
@@ -249,8 +258,8 @@ h4 {
 
 			{block:IfSearchInSidebar}
 				<form action="/search" method="get">
-					<input type="text" name="q" value="{SearchQuery}"/>
-					<input type="submit" value="{lang:Search}"/>
+					<input type="text" name="q" value="{SearchQuery}" id="query"/>
+					<input type="submit" value="{lang:Search}" id="submit"/>
 				</form>
 			{/block:IfSearchInSidebar}
 		</div> <!-- #nav --> 
@@ -260,18 +269,16 @@ h4 {
 	{block:Posts}
 		{block:Text}
 		<li class="post_text">
+        
+        {PostType}
 			{block:Title}
 				<h1>{Title}</h1>
 			{/block:Title}
 
 			<h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
-			
-			
-			{block:Caption}
-				<h3> {Caption} </h3>	
-			{/block:Caption}
 
 			<p>{Body}</p>
+            <h3>{Quote}</h3>
 
 			<hr>
 		</li>
@@ -292,7 +299,7 @@ h4 {
 
 			
 			{block:Caption}
-			<h3> {Caption} </h3>	
+			    <h3> {Caption} </h3>	
 			{/block:Caption}
 
 			<p>{Body}</p>
@@ -301,36 +308,149 @@ h4 {
 		</li>
 	{/block:Photo}
 
-<!-- 	{block:photoset}
+	{block:photoset}
+    <li class="post_photoset">
+    
+    <img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}"/>
+    
+    {block:Caption}
+        <h3>{Caption}</3>
+    {/block:Caption}
+    
+    <hr>
+    </li>
 	{/block:photoset}
 
 	{block:quote}
+    <li class="post_quote">
+        {block:Title}
+            <h1>{Title}</h1>
+        {/block:Title}
+        
+        <h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
+        
+        
+        {block:Caption}
+    		<h3> {Caption} </h3>	
+		{/block:Caption}
+
+			<p>{Body}</p>
+            <h2>{Quote}</h2>
+            
+            {block:Source}
+                <h4>- {Source}</h4>
+            {/block:Source}
+        
+            <hr>
+        </li>
 	{/block:quote}
 
 	{block:Link}
+    <li class="post_link">
+        
+        <h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
+        
+        <h2><a href="{URL}">{Name}{Target}</a></h2>
+        
+        {block:Description}
+            <p>{Description}</p>
+        {/block:Description}
+        
+        <hr>
+        </li>
+        
 	{/block:Link}
 
 	{block:Chat}
-	{/block:Chat}
+    <li class="post_chat">
+        {block:Title}
+            <h1>{Title}</h1>
+        {/block:Title}
+        
+        <h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
+    
+        <ul class="chat">
+            {block:Lines}
+                <li class="{Alt} user_{UserNumber}">
+                    {block:Label}
+                        <h3><span class="label">{Label}</span></h3>
+                    {/block:Label}
+                    
+                   <p>{Line}</p>
+                </li>
+            {/block:Lines}
+        </ul>
+    <hr>
+    </li>
+    {/block:Chat}
 
 	{block:Audio}
+    <li class="post_audio">
+         <h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
+        
+        {block:AudioPlayer}
+            {AudioPlayerGrey}
+        {/block:AudioPlayer}
+        
+        {block:AudioEmbed}
+            {AudioEmbed-500}
+        {/block:AudioEmbed}
+        
+        {block:Caption}
+            <h1>{Caption}</h1>
+        {/block:Caption}
+        
+     
+        {block:Artist}
+            <h4>{Artist}</h4>
+        {/block:Artist}
+        
+        {block:TrackName}
+           <h4>{TrackName}</h4>
+        {/block:TrackName}
+        <hr>
+    </li>
 	{/block:Audio}
 
 	{block:Video}
+    <li class="post_video">
+        {block:Caption}
+            <h1>{Caption}</h1>
+        {/block:Caption}
+        
+        <h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
+        
+        {VideoEmbed-500}
+        {PlayCountWithLabel}
+        <hr>
+        </li>
 	{/block:Video}
 
 	{block:Answer}
-	{/block:Answer} -->
+    <li class="post_answer">
+    
+     <h4>by {PostAuthorName}, {ShortMonth}{DayOfMonth},{Year}</h4>
+        
+        {block:Question}
+            <h1>{Question}</h1>
+        {/block:Question}
+        
+        <h4>{Asker}</h4>
+        
+        <p>{Answer}</p>
+        
+      </li>  
+	{/block:Answer} 
 	
 	</ul><!-- #posts-->
 {/block:Posts}
 </div> <!--.content-->
 
 	<div class="footer">
-		<h5>© {PostAuthorName} {CopyrightYear}</h5>
+		<h5>©{PostAuthorName} {CopyrightYear}</h5>
 	
 	<!-- PAGINATION  --> 
-		{block:Pagination;}
+		{block:Pagination}
 			<div class="pagination">
 				  {block:PreviousPage}
 		                <a href="{PreviousPage}">Previous</a>
@@ -339,7 +459,7 @@ h4 {
 		          {block:NextPage}
 		                <a href="{NextPage}">Next</a>
 		          {/block:NextPage}
-          </div> /* .pagination */
+          </div> <!--pagination-->
         {/block:Pagination}
 	
 	</div><!-- .footer -->

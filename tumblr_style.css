@@ -1,0 +1,156 @@
+.wrapper {
+	min-width: 850px;
+	position:relative;
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	 height: 100%;
+	 width: 1020px;
+	position: relative;
+	margin-right: auto;
+	margin-left:auto;
+}
+
+* {
+	background: url('natural_paper.png');
+}
+
+
+@font-face {
+    font-family:'NixieOneRegular';
+    src: url('NixieOne-Regular-webfont.eot');
+    src: url('NixieOne-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('NixieOne-Regular-webfont.woff') format('woff'),
+         url('NixieOne-Regular-webfont.ttf') format('truetype'),
+         url('NixieOne-Regular-webfont.svg#NixieOneRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#nav {
+	width: 150px;
+	float:left;
+	margin: 25px;
+	height: 100%;
+/*	display: block;*/
+}
+
+#nav h2 {
+	padding: 0;
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-family: "Raleway";/*"NixieOneRegular";*/
+	font-size: 33px;
+	font-style: normal;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+#nav ul {
+	/*display: block;*/
+	padding: 0 0 0 0;
+	transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	   -moz-transform:rotate(-90deg);
+	     -o-transform:rotate(-90deg);
+	    -ms-transform:rotate(-90deg);
+	    width: 100%;
+	    margin-left: auto;
+	    margin-right: auto;
+		position: relative;
+		text-align: right;
+}
+
+#nav ul li {
+	padding: 0 0 10px 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+	font-family: "Raleway";
+	letter-spacing: 0.3em;
+	font-weight: 300;
+	font-size: 23px;
+	text-transform: uppercase;
+}
+
+#nav ul li:last-child {
+	padding: 0;
+	margin:0;
+}
+
+
+#posts li {
+	width: 620px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0;
+	/*float: left;*/
+	padding-bottom: 0;
+/*	display: block;*/
+	list-style-type: none;
+}
+
+.content {
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 75px;
+	width: 650px;
+	padding-left: 20px;
+}
+
+img {
+	padding: 0 0 15px 0;
+}
+
+#posts li h1 {
+	font-family: 'Abril Fatface';
+	font-size: 59px;
+	font-style: normal;
+	font-weight: 400;
+	margin: 0;
+	padding-bottom: 0;
+	line-height: 46px;
+}
+
+#posts li p {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 100;
+	line-height: 19px;
+	padding-bottom:;
+}
+
+h5 {
+	font-family: "League Script";
+	text-transform: lowercase;
+	font-style: normal;
+	font-size: 17px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	margin:0;
+}
+
+h3 {
+	font-family: "Forum"; /*"NixieOneRegular";*/
+	font-style: normal;
+	font-weight: 100;
+	font-size: 22px;
+	line-height: 20px;
+	margin-top: 0;
+	padding: 0;
+
+}
+
+hr {
+	margin: 15px 0 15px 0;
+}
+
+.footer {
+	padding: 0;
+	margin: 0 0 0 50px;
+
+}
