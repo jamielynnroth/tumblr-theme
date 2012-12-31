@@ -1,3 +1,52 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+ p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, header, details, figcaption, figure, 
+footer, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+ol, ul {list-style: none;
+}
+
+blockquote, q {quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
 /* GLOBAL STYLES*/
 
 .wrapper {
@@ -23,6 +72,10 @@
 	background: url('natural_paper.png');
 }
 
+a {
+	text-decoration: none;
+	color: #746D99;
+}
 
 /*@font-face {
     font-family: 'ZnikomitRegular';
@@ -89,7 +142,7 @@ h5 {
 	margin:0;
 }
 
-.updates p {
+p {
 	font-family: 'Raleway';
 	font-style: normal;
 	font-weight: 100;
@@ -109,7 +162,7 @@ h5 {
 
 #nav ul {
 	/*display: block;*/
-	padding: 0 0 0 0;
+	padding: 0;
 	transform:rotate(-90deg);
 	-webkit-transform:rotate(-90deg);
 	   -moz-transform:rotate(-90deg);
@@ -120,6 +173,7 @@ h5 {
 	    margin-right: auto;
 		position: relative;
 		text-align: right;
+	margin-bottom: 20px;
 }
 
 #nav ul li {
@@ -135,7 +189,7 @@ h5 {
 }
 
 #nav ul li:last-child {
-	padding: 0;
+	padding:
 	margin:0;
 }
 
@@ -143,7 +197,45 @@ h5 {
 	width: 150px;
 	height: 150px;
 	padding: 0;
-	margin: 0 0 10px 0;
+	margin: 0 0 20px 0;
+	border: 2px #746D99 solid;
+}
+
+#nav form {
+	padding: 2px 0;
+	width: 100%;
+}
+
+#nav form #search {
+	width: 143px;
+	line-height: 16px;
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 16px;
+}
+
+#nav form #submit {
+	float: right;
+	padding: 0;
+	margin: 5px 0;
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 20px;
+	border-radius: 3px;
+	background-color: silver;
+}
+
+#submit:hover {
+
+}
+
+#nav h5 {
+	padding-left: 2px;
+	padding-top: 10px;
+	line-height: 0;
 }
 /******************************* GLOBAL POST *****************************/
 
@@ -160,10 +252,15 @@ hr {
 	margin: 25px 0;
 }
 
+.updates span {
+	color: #746D99;
+}
+
 /********************************* PHOTO *********************************/
 
 .post_photo img {
 	padding: 0 0 15px 0;
+
 }
 
 /********************************* LINK **********************************/
@@ -228,8 +325,29 @@ hr {
 	margin-left: auto;
 }
 
+/***************************** AUDIO *********************************/
+
+.post_audio span {
+	font-style: italic;
+}
+
 /***************************** FOOTER ******************************/
 .footer {
 	padding: 0;
 	margin: 0 0 0 50px;
+}
+
+.footer h5 {
+	display:inline;
+	text-align: left;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.footer p {
+	display:inline;
+	float: right;
+	font-size: 13px;
+	padding: 0 10px 0 0;
+	margin: 0;
 }
