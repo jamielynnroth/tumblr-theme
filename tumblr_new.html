@@ -1,0 +1,764 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>{Title}</title>
+	<link rel="sortcut icon" href="{Favicon}">
+	<link rel="stylesheet" href="style.css">
+	{block:Description}
+		<meta name="description" content="{MetaDescription}"/>
+	{/block:Description}
+
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/wirewyrm" rel="stylesheet" type="text/css"/>
+	<link href='http://fonts.googleapis.com/css?family=Forum' rel='stylesheet' type='text/css'>
+    
+<meta name="image:background" content="http://static.tumblr.com/pmbv9hp/E7imfvqx6/natural_paper.png"/>
+
+
+
+<style type="text/css">
+
+/* CSS RESET:
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)*/
+   
+html, body, div, span, applet, object, iframe,
+ p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, header, details, figcaption, figure, 
+footer, hgroup, menu, nav, section {
+	display: block;
+}
+
+html, body {
+       height: 100%;
+ }
+
+ol, ul {list-style: none;
+}
+
+blockquote, q {quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* GLOBAL STYLES*/
+
+html {
+	background: url('{image:Background}');
+
+}
+.wrapper {
+	/*min-width: 975px;
+	max-width: 1000px;*/
+	position:relative;
+	padding:0;
+	margin: 0;
+	float:left; /*This prevents .wrapper from collapsing*/
+}
+
+.content {
+	/*height: 100%;
+	min-width: 950px;
+	position: relative;
+	margin-top: 0;
+	padding-top: 50px;*/
+	clear:both;
+	margin:0;
+	float: right; /*This prevents .content from collapsing*/
+	padding-top: 65px;
+}
+
+a {
+	text-decoration: none;
+	color: #746D99;
+}
+
+
+/********************************** FONTS *********************************/
+/*@font-face {
+    font-family: 'NixieOneRegular';
+    src: url('NixieOne-Regular-webfont.eot');
+    src: url('NixieOne-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('NixieOne-Regular-webfont.woff') format('woff'),
+         url('NixieOne-Regular-webfont.ttf') format('truetype'),
+         url('NixieOne-Regular-webfont.svg#NixieOneRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+h1 {
+	font-family: 'Abril Fatface';
+	font-size: 59px;
+	font-style: normal;
+	font-weight: 400;
+	margin: 0;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	line-height: 46px;
+}
+
+h2 {
+	padding: 0;
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-family: "Raleway";
+	font-size: 33px;
+	font-style: normal;
+	font-weight: 200;
+	text-transform: uppercase;
+	line-height: 35px;
+}
+
+h3 {
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 22px;
+	line-height: 24px;
+	margin-top: 0;
+	padding: 0;
+}
+
+h5 {
+	font-family: "League Script";
+	text-transform: lowercase;
+	font-style: normal;
+	font-size: 17px;
+	padding-top: 0;
+	padding-bottom: 20px;
+	margin:0;
+}
+
+p {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 100;
+	line-height: 26px;
+	padding-bottom: 5px;
+	font-size: 20px;
+}
+
+/********************************* NAVIGATION ********************************/
+
+#nav {
+	min-width: 150px;
+    max-width: 300px;
+	float:left;
+	margin: 0 25px 25px 25px;
+	min-height: 6000px;
+	padding-top: 0;
+	position:absolute;
+	top: 65px;
+/*	display: block;*/
+	/*position:fixed;*/
+}
+
+#nav ul {
+	/*display: block;*/
+	padding: 0;
+	transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	   -moz-transform:rotate(-90deg);
+	     -o-transform:rotate(-90deg);
+	    -ms-transform:rotate(-90deg);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+	position: relative;
+	text-align: right;
+	margin-bottom: 20px;
+	top: 100px;
+}
+
+#nav ul li {
+	padding: 0 0 10px 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+	font-family: "Raleway";
+	letter-spacing: 0.3em;
+	font-weight: 300;
+	font-size: 23px;
+	text-transform: uppercase;
+}
+
+#nav ul li:last-child {
+	padding: 0;
+	margin:0;
+}
+
+#nav img {
+	width: 128px; /* 150px */
+	height: 128px;
+	padding: 0;
+	margin: 0 auto 20px auto;
+	border: 2px #746D99 solid;
+	display:block; 
+}
+
+#nav form {
+	padding: 2px 0;
+	width: 100%;
+}
+
+#nav form #search {
+	width: 128px;
+	line-height: 16px;
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 16px;
+	display:block;
+	margin-right: auto;
+	margin-left: auto;
+	display:block;
+}
+
+#nav form #submit {
+	float: right;
+	padding: 0;
+	margin: 3px 0;
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 18px;
+	border-radius: 3px;
+	background-color: silver;
+}
+
+/*#submit:hover {
+
+}*/
+
+#nav h5 {
+	padding-left: 0;
+	padding-top: 10px;
+	line-height: 18px;
+	text-align:center;
+}
+
+#personal_info {
+    top: 175px;
+    display: block;
+    position: relative;
+}
+
+#nav_wrapper {
+    position:relative;
+}
+
+/******************************* GLOBAL POST *****************************/
+
+.updates {
+	width: 620px;
+	float:left;
+	padding-left: 50px;
+	position:relative;
+	left: 350px;
+}
+
+	.updates ul li {
+		width: 620px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 0;
+		list-style-type: none;
+		padding-bottom: 0;
+		border-bottom: 1px gray solid;
+	}
+
+	.updates ul li:last-child {
+		border-bottom:none;
+	}
+
+
+	.updates span {
+		color: #746D99;
+	}
+
+hr {
+	margin: 20px 0 25px 0;
+}
+
+
+li {
+    font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 22px;
+	line-height: 24px;
+	margin-top: 0;
+	/*padding: 0 0 0 25px;*/
+}
+
+ul {
+    padding: 15px 0;
+}
+
+blockquote {
+    font-family: "League Script";
+	text-transform: lowercase;
+	font-style: normal;
+	font-size: 22px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin:0;
+}
+
+img {
+    border: 2px #746D99 solid;
+}
+
+/********************************* TEXT **********************************/
+
+.post_text ul {
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+	.post_text ul li {
+	    list-style-type:circle;
+	    padding-bottom: 20px;
+	    border-bottom:none;
+	}
+
+		.post_text ul li:last-child {
+		    padding-bottom: 0;
+		    margin-bottom:0;
+		}
+
+		.post_text ul li:first-child {
+		    padding-top:0;
+		    margin-top:0;
+		}
+/********************************* PHOTO *********************************/
+.post_photo h3 {
+    text-align:center;
+} 
+.post_photo img {
+	padding: 0;
+	margin-left: 55px;
+    margin-right: 55px;
+    margin-top:0;
+    margin-bottom: 15px;
+    width:"{PhotoWidth-500}";
+    height:"{PhotoHeight-500}";
+}
+
+/********************************* LINK **********************************/
+
+.post_link a {
+	text-decoration: none; 
+}
+
+/********************************* CHAT ***********************************/
+
+.post_chat li {
+	display:inline;
+	padding: 0;
+	margin:0;
+	/*width: 100%;*/
+	text-indent: 0;
+}
+
+.post_chat ul {
+	padding: 0;
+}
+
+.post_chat li span { 
+	/* Make chat ID's match <h3> style */
+	font-family: "Forum"; 
+	font-style: normal;
+	font-weight: 100;
+	font-size: 22px;
+	line-height: 20px;
+	margin-top: 0;
+	padding: 0;
+}
+
+/***************************** PHOTOSET ************************************/
+
+.post_photoset img {
+	width: 186px;
+	float: left;
+	padding: 10px;
+}
+
+.post_photoset img:last-child {
+	padding-bottom: 20px;
+}
+
+.post_photoset hr {
+	clear:both;
+}
+
+#photoset {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/**************************** VIDEO ********************************/
+
+#video {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/***************************** AUDIO *********************************/
+
+.post_audio span {
+	font-style: italic;
+}
+
+/***************************** FOOTER ******************************/
+.footer {
+	padding: 0;
+	margin: 0 0 0 50px;
+	
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 50px;
+	clear:both;
+}
+
+.footer h5 {
+	display:inline;
+	text-align: left;
+	padding: 50px 0 0 10px;
+}
+
+.footer p {
+	display:inline;
+	float: right;
+	font-size: 13px;
+	padding: 0 10px 0 0;
+	margin: 0;
+}
+
+#pagination {
+    position: absolute;
+    bottom: 75px;
+    right: 95px;
+}
+
+{CustomCSS}
+
+</style>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="content">
+		<div id="nav">
+			<div id="nav_wrapper"> <!-- Relative div parent -->
+			
+			<span><h2>{Title}</h2></span>
+			<hr>
+            
+        
+		{block:HasPages}
+			<ul>
+            {block:Pages}
+				<li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+			</ul>
+        {/block:HasPages}
+        
+        
+        
+        <div id="personal_info">
+			<img src="{PortraitURL-128}">
+			
+			<h5>{TwitterUsername}</h5> 
+			<h5>{Description}</h5>
+        
+        {block:AskEnabled}
+            <h5><a href="/ask">{AskLabel}</a></h5>
+        {/block:AskEnabled}
+        
+      
+
+		<form action"="" search"="" method="get">
+			<input type="text" name="search" id="search" placeholder="" style="position: relative; font-size: 16px; line-height: 16px;" spellcheck="false" greditor="true">
+			<input type="submit" value="Search" name="submit" id="submit" style="visibility: hidden">
+		</form>
+        
+        </div> <!-- #personal_info -->
+        </div><!-- #div_wrapper"-->
+        </div><!-- #nav-->
+			
+	
+{block:Posts}
+		<div class="updates">
+		<ul>
+		
+	{block:Text}
+		<li class="post_text">
+			{block:PostTitle}
+				<h1>{PostTitle}</h1>
+	        {/block:PostTitle}
+
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            
+				<span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+			<p>{Body}</p>
+			<!-- <hr> -->
+		</li>
+	{/block:Text}
+
+
+		 {block:Photo}
+		<li class="post_photo">
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+
+			<img src="{PhotoURL-500}">
+			
+			<h3>{Caption}</h3>	
+			
+			<hr>
+		</li>
+    {/block:Photo}
+
+	{block:Quote}
+		<li class="post_quote">
+	        {block:PostTitle}
+				<h1>{PostTitle}</h1>
+	        {/block:PostTitle}
+	        
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+
+			<h2>"{Quote}"</h2>
+		        {block:Source}
+					<h5>- {Source}</h5>
+		        {/block:Source}
+		<!-- 	<hr> -->
+		</li>
+        
+    {/block:Quote}
+
+	 {block:Photoset}
+
+		<li class="post_photoset">
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+        {block:Photos}
+		<div id="photoset">
+		    <img src="{Photoset-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" />
+		</div> <!-- #photoset -->
+        {/block:Photos}
+        {block:Caption}
+			<h2>{Caption}</h2> 
+        {/block:Caption}
+			<!-- <hr> -->
+		</li>
+    {/block:Photoset}
+
+
+	{block:Audio}
+		<li class="post_audio">
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+
+        {block:TrackName}
+			<h1>{TrackName}</h1>
+        {/block:TrackName}
+        
+        {block:Artist}
+			<h3>{Artist}</h3>
+        {/block:Artist}
+        
+        {block:Album}
+            <h3><span>{Album}</span></h3>
+        {/block:Album}
+			
+			{AudioPlayerWhite}
+			<!-- <hr> -->
+            
+            {block:Caption}
+                <h3>{Caption</h3>
+            {/block:Caption}
+		</li>
+    {/block:Audio}
+
+	{block:Video}
+    
+		<li class="post_video">
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+			
+		<div id="video">
+			{VideoEmbed-500}
+		</div>
+        
+        {block:Caption}
+			<h2>{Caption}</h2> 
+        {/block:Caption}
+			<!-- <hr> -->
+		</li>
+        
+    {/block:Video}
+
+	{block:Chat}
+
+		<li class="post_chat">
+        {block:Title}
+			<h1>{Title} </h1>
+        {/block:Title}
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+			{block:Lines}
+            <ul class="chat">
+				<li class="chat">
+					<p><span>{Name}:</span> {Line} </p>
+				</li>
+			</ul>
+            {/block:Lines}
+			<!-- <hr> -->
+		</li>
+    {/block:Chat}
+
+	{block:Link}
+		<li class="post_link">
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+
+			<h2><a href="{URL}">{Name}{Target}</a></h2>
+
+        {block:Description}
+			<p>{Description}</p>
+        {/block:Description}
+			<!-- <hr> -->
+		</li>
+	{/block:Link}
+
+	{block:Answer}
+
+		<li class="post_answer">
+			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+           {block:NoteCount}
+               | {NoteCountWithLabel}
+           {/block:NoteCount}
+     </span></h5>
+
+			<h1>{Question}</h1>
+
+			<h5>- {Asker} </h5>
+
+			<p>{Answer}</p>
+			<!-- <hr> -->
+
+		</li>
+    {/block:Answer}
+
+    {block:RebloggedFrom}
+    <h1>{ReblogParentTitle}</h1>
+			<h5>Reblogged from <a href="{ReblogRootURL}">{ReblogRootName}</a> via 
+				<a href="{ReblogParentURL}">{ReblogParentName}</a> <a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a> </h5>
+    {/block:RebloggedFrom}
+
+    </ul>
+	</div> <!-- .updates -->
+{/block:Posts}
+	</div> <!--.content-->
+
+	<div class="footer">
+		
+
+		<div id="pagination">
+		  {block:Pagination}
+        {block:PreviousPage}
+            <a href="{PreviousPage}">Previous</a>
+        {/block:PreviousPage}
+        
+        {block:JumpPagination length="5"}
+            {block:CurrentPage}
+                <span class="current_page">{PageNumber}</span>
+            {/block:CurrentPage}
+            
+            {block:JumpPage}
+                <a class="jump_page" href="{URL}">{PageNumber}</a>
+            {/block:JumpPage}
+        {/block:JumpPagination}
+
+        
+        {block:NextPage}
+           <a href="{NextPage}">Next</a>
+        {/block:NextPage}
+        
+        
+    {/block:Pagination}
+</div> <!--#pagination-->
+<h5>© jamie roth {CopyrightYears}</h5>
+		<p>theme by <a href="http://twitter.com/jamielynnroth">@jamielynnroth</a></p>
+	</div><!-- .footer -->
+	</div><!-- .wrapper -->
+
+</body>
+
+</html>
