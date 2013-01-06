@@ -16,8 +16,20 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/wirewyrm" rel="stylesheet" type="text/css"/>
 	<link href='http://fonts.googleapis.com/css?family=Forum' rel='stylesheet' type='text/css'>
-    
+  
+  <!-- Default Styles -->  
 <meta name="image:background" content="http://static.tumblr.com/pmbv9hp/E7imfvqx6/natural_paper.png"/>
+<meta name="color:Text" content="#000"/>
+<meta name="color:Link" content="#746D99"/>
+<meta name="color:Borders" content="#746D99/">
+<meta name="text:SearchPlaceholder" content="Search the archives"/>
+
+<!-- Default Fonts-->
+<meta name="font:Title" content="Abril Fatface"/>
+<meta name="font:Body" content="Raleway"/>
+<meta name="font:Subtitles" content="League Script"/>
+<meta name="font:Lists" content="Forum"/>
+<meta name="font:Captions" content="Raleway"/>
 
 
 
@@ -86,8 +98,9 @@ html {
 	max-width: 1000px;*/
 	position:relative;
 	padding:0;
-	margin: 0;
-	float:left; /*This prevents .wrapper from collapsing*/
+	margin: 0 auto;
+	width: 90%;
+	/*float:left; This prevents .wrapper from collapsing*/
 }
 
 .content {
@@ -96,15 +109,17 @@ html {
 	position: relative;
 	margin-top: 0;
 	padding-top: 50px;*/
-	clear:both;
-	margin:0;
-	float: right; /*This prevents .content from collapsing*/
+/*	clear:both;*/
+	margin:0 25px;
+	/*float: left; This prevents .content from collapsing*/
 	padding-top: 65px;
+	min-width: 1105px;
+	overflow:auto;
 }
 
 a {
 	text-decoration: none;
-	color: #746D99;
+	color: "{color:Link}";
 }
 
 
@@ -121,7 +136,7 @@ a {
 }*/
 
 h1 {
-	font-family: 'Abril Fatface';
+	font-family: '{font:Title}';
 	font-size: 59px;
 	font-style: normal;
 	font-weight: 400;
@@ -129,59 +144,64 @@ h1 {
 	padding-bottom: 10px;
 	padding-top: 10px;
 	line-height: 46px;
+	color: "{color:Text}";
 }
 
 h2 {
 	padding: 0;
 	margin: 0 0 10px 0;
 	text-align: center;
-	font-family: "Raleway";
+	font-family: "{font:Captions}";
 	font-size: 33px;
 	font-style: normal;
 	font-weight: 200;
 	text-transform: uppercase;
 	line-height: 35px;
+	color: "{color:Text}";
 }
 
 h3 {
-	font-family: "Forum"; 
+	font-family: "{font:Lists}"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 22px;
 	line-height: 24px;
 	margin-top: 0;
 	padding: 0;
+	color: "{color:Text}";
 }
 
 h5 {
-	font-family: "League Script";
+	font-family: "{font:Subtitles}";
 	text-transform: lowercase;
 	font-style: normal;
 	font-size: 17px;
 	padding-top: 0;
 	padding-bottom: 20px;
 	margin:0;
+	color: "{color:Text}";
 }
 
 p {
-	font-family: 'Raleway';
+	font-family: '{font:Body}';
 	font-style: normal;
 	font-weight: 100;
 	line-height: 26px;
 	padding-bottom: 5px;
 	font-size: 20px;
+	color: "{color:Text}";
 }
 
 /********************************* NAVIGATION ********************************/
 
 #nav {
-	min-width: 150px;
-    max-width: 300px;
+	/*min-width: 150px;
+    max-width: 300px;*/
 	float:left;
 	margin: 0 25px 25px 25px;
 	min-height: 6000px;
 	padding-top: 0;
-	position:absolute;
+	/*position:absolute;*/
 	top: 65px;
 /*	display: block;*/
 	/*position:fixed;*/
@@ -201,7 +221,8 @@ p {
 	position: relative;
 	text-align: right;
 	margin-bottom: 20px;
-	top: 100px;
+	top: 135px;
+
 }
 
 #nav ul li {
@@ -226,7 +247,8 @@ p {
 	height: 128px;
 	padding: 0;
 	margin: 0 auto 20px auto;
-	border: 2px #746D99 solid;
+	border: 2px solid;
+    border-color:"{color:Borders}";
 	display:block; 
 }
 
@@ -265,6 +287,10 @@ p {
 
 }*/
 
+#nav h2 {
+	max-width: 430px;
+}
+
 #nav h5 {
 	padding-left: 0;
 	padding-top: 10px;
@@ -273,7 +299,7 @@ p {
 }
 
 #personal_info {
-    top: 175px;
+    top: 40px;
     display: block;
     position: relative;
 }
@@ -284,12 +310,17 @@ p {
 
 /******************************* GLOBAL POST *****************************/
 
-.updates {
+#content_wrapper {
 	width: 620px;
-	float:left;
+	float: left;
+}
+
+.updates {
+	/*width: 620px;
+	float:left;*/
 	padding-left: 50px;
 	position:relative;
-	left: 350px;
+	/*left: 350px;*/
 }
 
 	.updates ul li {
@@ -341,7 +372,8 @@ blockquote {
 }
 
 img {
-    border: 2px #746D99 solid;
+    border: 2px solid;
+    border-color:"{color:Borders}";
 }
 
 /********************************* TEXT **********************************/
@@ -446,13 +478,30 @@ img {
 
 .post_audio span {
 	font-style: italic;
+    display:inline;
 }
 
+#audio_player {
+    text-align:center;
+    padding: 25px 0;
+}
+
+#audio_caption{
+    text-align:center;
+}
+
+
+/*#track_title h3 {
+    display: inline;
+}
+
+#album_title h3 {
+    display: inline;
+}*/
 /***************************** FOOTER ******************************/
 .footer {
 	padding: 0;
 	margin: 0 0 0 50px;
-	
 	bottom:0;
 	left:0;
 	width: 100%;
@@ -463,21 +512,27 @@ img {
 .footer h5 {
 	display:inline;
 	text-align: left;
-	padding: 50px 0 0 10px;
+	padding: 50px 0 0 0;
+	bottom: 0px;
+	position: absolute;
 }
 
 .footer p {
 	display:inline;
 	float: right;
 	font-size: 13px;
-	padding: 0 10px 0 0;
+	padding: 0;
 	margin: 0;
+	position: absolute;
+	bottom: 0;
+	right: -50px;
 }
 
 #pagination {
-    position: absolute;
-    bottom: 75px;
-    right: 95px;
+   position: absolute;
+	bottom: 35px;
+	right: 0;
+	width: 100px;
 }
 
 {CustomCSS}
@@ -504,7 +559,7 @@ img {
 			</ul>
         {/block:HasPages}
         
-        
+           </div><!-- #div_wrapper"-->
         
         <div id="personal_info">
 			<img src="{PortraitURL-128}">
@@ -519,15 +574,15 @@ img {
       
 
 		<form action"="" search"="" method="get">
-			<input type="text" name="search" id="search" placeholder="" style="position: relative; font-size: 16px; line-height: 16px;" spellcheck="false" greditor="true">
+			<input type="text" name="search" id="search" placeholder="{text:SearchPlaceholder}" style="position: relative; font-size: 16px; line-height: 16px;" spellcheck="false" greditor="true">
 			<input type="submit" value="Search" name="submit" id="submit" style="visibility: hidden">
 		</form>
         
         </div> <!-- #personal_info -->
-        </div><!-- #div_wrapper"-->
+     
         </div><!-- #nav-->
 			
-	
+	<div id="content_wrapper">
 {block:Posts}
 		<div class="updates">
 		<ul>
@@ -538,7 +593,7 @@ img {
 				<h1>{PostTitle}</h1>
 	        {/block:PostTitle}
 
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            
 				<span>
            {block:NoteCount}
                | {NoteCountWithLabel}
@@ -552,7 +607,7 @@ img {
 
 		 {block:Photo}
 		<li class="post_photo">
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -572,7 +627,7 @@ img {
 				<h1>{PostTitle}</h1>
 	        {/block:PostTitle}
 	        
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -590,7 +645,7 @@ img {
 	 {block:Photoset}
 
 		<li class="post_photoset">
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -610,37 +665,53 @@ img {
 
 	{block:Audio}
 		<li class="post_audio">
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
      </span></h5>
-
-        {block:TrackName}
-			<h1>{TrackName}</h1>
+    
+      {block:TrackName}
+    		<h1>{TrackName}</h1>
         {/block:TrackName}
         
-        {block:Artist}
-			<h3>{Artist}</h3>
+    <div id="track_title">
+         {block:Artist}
+    		<h3>{Artist}</h3>
         {/block:Artist}
-        
+    </div> <!-- #track_title-->
+         
+    <div id="album_title">
         {block:Album}
             <h3><span>{Album}</span></h3>
         {/block:Album}
-			
-			{AudioPlayerWhite}
-			<!-- <hr> -->
-            
-            {block:Caption}
-                <h3>{Caption</h3>
+    </div> <!-- #album_title-->
+        
+<div id="audio_player">
+     {AudioPlayer}
+     
+     {block:AudioEmbed}
+        {AudioEmbed-500}
+    {/block:AudioEmbed}
+     
+     {block:ExternalAudio}
+        {ExternalAudioURL}
+     {/block:ExternalAudio}
+
+</div><!-- #audio_player-->
+	<div id="audio_caption">	
+	        {block:Caption}
+                <h3>{Caption}</h3>
             {/block:Caption}
+    </div> <!-- #audio_caption-->
+    
 		</li>
     {/block:Audio}
 
 	{block:Video}
     
 		<li class="post_video">
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -664,7 +735,7 @@ img {
         {block:Title}
 			<h1>{Title} </h1>
         {/block:Title}
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -682,7 +753,7 @@ img {
 
 	{block:Link}
 		<li class="post_link">
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -700,7 +771,7 @@ img {
 	{block:Answer}
 
 		<li class="post_answer">
-			<h5><a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a>            <span>
+			<h5><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year} </a>            <span>
            {block:NoteCount}
                | {NoteCountWithLabel}
            {/block:NoteCount}
@@ -725,7 +796,9 @@ img {
     </ul>
 	</div> <!-- .updates -->
 {/block:Posts}
+</div><!--#content_wrapper-->
 	</div> <!--.content-->
+
 
 	<div class="footer">
 		
