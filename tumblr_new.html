@@ -3,33 +3,40 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<title>{Title}</title>
+    <title>{Title}</title>
 	<link rel="sortcut icon" href="{Favicon}">
-	<link rel="stylesheet" href="style.css">
+	
 	{block:Description}
 		<meta name="description" content="{MetaDescription}"/>
 	{/block:Description}
 
 	<!-- Google Web Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/wirewyrm" rel="stylesheet" type="text/css"/>
-	<link href='http://fonts.googleapis.com/css?family=Forum' rel='stylesheet' type='text/css'>
+	
+	
+
+
+
   
-  <!-- Default Styles -->  
+<!-- Default Styles-->
 <meta name="image:background" content="http://static.tumblr.com/pmbv9hp/E7imfvqx6/natural_paper.png"/>
 <meta name="color:Text" content="#000"/>
-<meta name="color:Link" content="#746D99"/>
-<meta name="color:Borders" content="#746D99/">
+<meta name="color:Link" content="#6E576C"/>
 <meta name="text:SearchPlaceholder" content="Search the archives"/>
 
-<!-- Default Fonts-->
-<meta name="font:Title" content="Abril Fatface"/>
-<meta name="font:Body" content="Raleway"/>
-<meta name="font:Subtitles" content="League Script"/>
-<meta name="font:Lists" content="Forum"/>
-<meta name="font:Captions" content="Raleway"/>
+<!-- Default Google Web Fonts-->
+<meta name="text:GoogleWebFontTitle" content="Abril Fatface"/>
+<link href='http://fonts.googleapis.com/css?family={text:GoogleWebFontTitle}' rel='stylesheet' type='text/css'>
+
+<meta name="text:GoogleWebFontSubtitles" content="League Script"/>
+<link href='http://fonts.googleapis.com/css?family={text:GoogleWebFontSubtitles}' rel='stylesheet' type='text/css'>
+
+<meta name="text:GoogleWebFontLists" content="Forum"/>
+<link href='http://fonts.googleapis.com/css?family={text:GoogleWebFontLists}' rel='stylesheet' type='text/css'>
+    
+<!--meta name="text:GoogleWebFontBody" content="Raleway:200,100"/>
+<link href='http://fonts.googleapis.com/css?family={text:GoogleWebFontBody}' rel='stylesheet' type='text/css'-->
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:200,100' rel='stylesheet' type='text/css'>
 
 
 
@@ -70,7 +77,10 @@ html, body {
  }
 
 ol, ul {list-style: none;
+    
 }
+
+
 
 blockquote, q {quotes: none;
 }
@@ -86,7 +96,6 @@ table {
 }
 
 
-
 /* GLOBAL STYLES*/
 
 html {
@@ -99,7 +108,7 @@ html {
 	position:relative;
 	padding:0;
 	margin: 0 auto;
-	width: 90%;
+   
 	/*float:left; This prevents .wrapper from collapsing*/
 }
 
@@ -108,21 +117,26 @@ html {
 	min-width: 950px;
 	position: relative;
 	margin-top: 0;
-	padding-top: 50px;*/
-/*	clear:both;*/
-	margin:0 25px;
-	/*float: left; This prevents .content from collapsing*/
-	padding-top: 65px;
-	min-width: 1105px;
-	overflow:auto;
+	padding-top: 50px;
+	clear:both;*/
+	margin: auto;
+    /*float: left; This prevents .content from collapsing*/
+    padding-top: 65px;
+    width: 1105px;
+   /* overflow:auto;*/
 }
+
+
 
 a {
 	text-decoration: none;
-	color: "{color:Link}";
+	color: {color:Link};
 }
 
 
+a:hover {
+    font-size: 105%;
+}
 /********************************** FONTS *********************************/
 /*@font-face {
     font-family: 'NixieOneRegular';
@@ -136,60 +150,60 @@ a {
 }*/
 
 h1 {
-	font-family: '{font:Title}';
+	font-family: "{text:GoogleWebFontTitle}";
 	font-size: 59px;
 	font-style: normal;
 	font-weight: 400;
 	margin: 0;
 	padding-bottom: 10px;
-	padding-top: 10px;
+    padding-top: 10px;
 	line-height: 46px;
-	color: "{color:Text}";
+    color: "{color:Text}";
 }
 
 h2 {
 	padding: 0;
 	margin: 0 0 10px 0;
 	text-align: center;
-	font-family: "{font:Captions}";
+	font-family: Raleway;/*"{text:GoogleWebFontBody}";*/
 	font-size: 33px;
 	font-style: normal;
-	font-weight: 200;
+	font-weight: 100;
 	text-transform: uppercase;
 	line-height: 35px;
-	color: "{color:Text}";
+    color: "{color:Text}";
 }
 
 h3 {
-	font-family: "{font:Lists}"; 
+	font-family: "{text:GoogleWebFontLists}"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 22px;
 	line-height: 24px;
 	margin-top: 0;
 	padding: 0;
-	color: "{color:Text}";
+    color: "{color:Text}";
 }
 
 h5 {
-	font-family: "{font:Subtitles}";
+	font-family: "{text:GoogleWebFontSubtitles}";
 	text-transform: lowercase;
 	font-style: normal;
 	font-size: 17px;
 	padding-top: 0;
 	padding-bottom: 20px;
 	margin:0;
-	color: "{color:Text}";
+    color: "{color:Text}";
 }
 
 p {
-	font-family: '{font:Body}';
+	font-family: Raleway; /* "{text:GoogleWebFontBody}";*/
 	font-style: normal;
 	font-weight: 100;
 	line-height: 26px;
-	padding-bottom: 5px;
-	font-size: 20px;
-	color: "{color:Text}";
+	padding-bottom: 20px;
+    font-size:20px;
+    color: "{color:Text}";
 }
 
 /********************************* NAVIGATION ********************************/
@@ -198,14 +212,16 @@ p {
 	/*min-width: 150px;
     max-width: 300px;*/
 	float:left;
-	margin: 0 25px 25px 25px;
-	min-height: 6000px;
+	margin: 0 25px 25px 25px; 
+	/*min-height: 6000px;*/
 	padding-top: 0;
-	/*position:absolute;*/
-	top: 65px;
-/*	display: block;*/
+    /*position:absolute;*/
+    top: 65px;
+    display: block;
 	/*position:fixed;*/
 }
+
+
 
 #nav ul {
 	/*display: block;*/
@@ -222,7 +238,6 @@ p {
 	text-align: right;
 	margin-bottom: 20px;
 	top: 135px;
-
 }
 
 #nav ul li {
@@ -230,7 +245,7 @@ p {
 	margin: 0;
 	list-style: none;
 	width: 100%;
-	font-family: "Raleway";
+	font-family: Raleway; /* "{text:GoogleWebFontBody}";*/
 	letter-spacing: 0.3em;
 	font-weight: 300;
 	font-size: 23px;
@@ -245,10 +260,8 @@ p {
 #nav img {
 	width: 128px; /* 150px */
 	height: 128px;
-	padding: 0;
+	padding: 2px;
 	margin: 0 auto 20px auto;
-	border: 2px solid;
-    border-color:"{color:Borders}";
 	display:block; 
 }
 
@@ -260,7 +273,7 @@ p {
 #nav form #search {
 	width: 128px;
 	line-height: 16px;
-	font-family: "Forum"; 
+	font-family: "{text:GoogleWebFontLists}"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 16px;
@@ -274,7 +287,7 @@ p {
 	float: right;
 	padding: 0;
 	margin: 3px 0;
-	font-family: "Forum"; 
+	font-family:"{text:GoogleWebFontLists}"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 16px;
@@ -283,12 +296,9 @@ p {
 	background-color: silver;
 }
 
-/*#submit:hover {
-
-}*/
 
 #nav h2 {
-	max-width: 430px;
+    max-width: 430px;
 }
 
 #nav h5 {
@@ -311,16 +321,17 @@ p {
 /******************************* GLOBAL POST *****************************/
 
 #content_wrapper {
-	width: 620px;
-	float: left;
+    width:620px;
+    float: left;
 }
 
 .updates {
 	/*width: 620px;
 	float:left;*/
 	padding-left: 50px;
-	position:relative;
-	/*left: 350px;*/
+    /*position:relative;
+    left: 350px;*/
+    
 }
 
 	.updates ul li {
@@ -330,13 +341,14 @@ p {
 		margin-top: 0;
 		list-style-type: none;
 		padding-bottom: 0;
-		border-bottom: 1px gray solid;
+        border-bottom: 1px gray solid;
 	}
+    
 
-	.updates ul li:last-child {
-		border-bottom:none;
-	}
 
+.updates ul li:last-child {
+    border-bottom: none;
+}
 
 	.updates span {
 		color: #746D99;
@@ -348,7 +360,7 @@ hr {
 
 
 li {
-    font-family: "Forum"; 
+    font-family:"{text:GoogleWebFontLists}"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 22px;
@@ -362,7 +374,7 @@ ul {
 }
 
 blockquote {
-    font-family: "League Script";
+    font-family: "{text:GoogleWebFontSubtitles}";
 	text-transform: lowercase;
 	font-style: normal;
 	font-size: 22px;
@@ -372,8 +384,18 @@ blockquote {
 }
 
 img {
-    border: 2px solid;
-    border-color:"{color:Borders}";
+    padding: 2px;
+    border: 1px solid;
+    border-color:rgba(0,0,0,0.5);
+    background-color: white;
+            box-shadow: 0 0 2px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,0.3);
+       -moz-box-shadow: 0 0 2px 2px rgba(0,0,0,0.3);
+}
+
+.post_notes {
+    border-bottom:none;
+    line-height: 20px;
 }
 
 /********************************* TEXT **********************************/
@@ -386,24 +408,24 @@ img {
 	.post_text ul li {
 	    list-style-type:circle;
 	    padding-bottom: 20px;
-	    border-bottom:none;
+        border-bottom:none;
 	}
 
 		.post_text ul li:last-child {
 		    padding-bottom: 0;
-		    margin-bottom:0;
+            margin-bottom:0;
 		}
 
 		.post_text ul li:first-child {
 		    padding-top:0;
-		    margin-top:0;
+            margin-top:0;
 		}
 /********************************* PHOTO *********************************/
 .post_photo h3 {
     text-align:center;
 } 
 .post_photo img {
-	padding: 0;
+
 	margin-left: 55px;
     margin-right: 55px;
     margin-top:0;
@@ -433,8 +455,8 @@ img {
 }
 
 .post_chat li span { 
-	/* Make chat ID's match <h3> style */
-	font-family: "Forum"; 
+	/* Make chat IDs match <h3> style */
+	font-family: "{text:GoogleWebFontLists}"; 
 	font-style: normal;
 	font-weight: 100;
 	font-size: 22px;
@@ -448,7 +470,7 @@ img {
 .post_photoset img {
 	width: 186px;
 	float: left;
-	padding: 10px;
+	margin: 10px;
 }
 
 .post_photoset img:last-child {
@@ -490,14 +512,20 @@ img {
     text-align:center;
 }
 
+.post_audio h3 {
+    padding-top: 10px;
+}
 
-/*#track_title h3 {
-    display: inline;
+#track_title h3 {
+    display: block;
+    float:left;
+    clear:both;
 }
 
 #album_title h3 {
-    display: inline;
-}*/
+    display: block;
+    float:left;
+}
 /***************************** FOOTER ******************************/
 .footer {
 	padding: 0;
@@ -513,8 +541,8 @@ img {
 	display:inline;
 	text-align: left;
 	padding: 50px 0 0 0;
-	bottom: 0px;
-	position: absolute;
+    bottom: 0px;
+    position: absolute;
 }
 
 .footer p {
@@ -523,16 +551,20 @@ img {
 	font-size: 13px;
 	padding: 0;
 	margin: 0;
-	position: absolute;
-	bottom: 0;
-	right: -50px;
+    position: absolute;
+    bottom: 0;
+    right: -49px;
 }
 
 #pagination {
    position: absolute;
-	bottom: 35px;
-	right: 0;
-	width: 100px;
+    bottom: 35px;
+    right: 135px;
+    width: 100px;
+}
+
+#credit {
+	right: 85px;
 }
 
 {CustomCSS}
@@ -558,8 +590,8 @@ img {
             {/block:Pages}
 			</ul>
         {/block:HasPages}
+       </div><!-- #div_wrapper"--> 
         
-           </div><!-- #div_wrapper"-->
         
         <div id="personal_info">
 			<img src="{PortraitURL-128}">
@@ -568,7 +600,7 @@ img {
 			<h5>{Description}</h5>
         
         {block:AskEnabled}
-            <h5><a href="/ask">{AskLabel}</a></h5>
+             <h5><a href="/ask">{AskLabel}</a></h5>
         {/block:AskEnabled}
         
       
@@ -579,7 +611,7 @@ img {
 		</form>
         
         </div> <!-- #personal_info -->
-     
+        
         </div><!-- #nav-->
 			
 	<div id="content_wrapper">
@@ -600,7 +632,13 @@ img {
            {/block:NoteCount}
      </span></h5>
 			<p>{Body}</p>
-			<!-- <hr> -->
+		
+    <div class="post_notes">		
+        {block:PostNotes}
+           <p> {PostNotes-16}</p>
+        {/block:PostNotes}
+	</div> <!-- .post_notes -->	
+    
 		</li>
 	{/block:Text}
 
@@ -616,8 +654,12 @@ img {
 			<img src="{PhotoURL-500}">
 			
 			<h3>{Caption}</h3>	
-			
-			<hr>
+            
+	<div class="post_notes">		
+        {block:PostNotes}
+           <p> {PostNotes-16}</p>
+        {/block:PostNotes}
+	</div> <!-- .post_notes -->	
 		</li>
     {/block:Photo}
 
@@ -637,7 +679,7 @@ img {
 		        {block:Source}
 					<h5>- {Source}</h5>
 		        {/block:Source}
-		<!-- 	<hr> -->
+		
 		</li>
         
     {/block:Quote}
@@ -658,7 +700,7 @@ img {
         {block:Caption}
 			<h2>{Caption}</h2> 
         {/block:Caption}
-			<!-- <hr> -->
+			
 		</li>
     {/block:Photoset}
 
@@ -677,13 +719,13 @@ img {
         
     <div id="track_title">
          {block:Artist}
-    		<h3>{Artist}</h3>
+    		<h3>{Artist} </h3>
         {/block:Artist}
     </div> <!-- #track_title-->
          
     <div id="album_title">
         {block:Album}
-            <h3><span>{Album}</span></h3>
+            <h3>&nbsp | <span>{Album}</span></h3>
         {/block:Album}
     </div> <!-- #album_title-->
         
@@ -724,7 +766,7 @@ img {
         {block:Caption}
 			<h2>{Caption}</h2> 
         {/block:Caption}
-			<!-- <hr> -->
+			
 		</li>
         
     {/block:Video}
@@ -747,7 +789,7 @@ img {
 				</li>
 			</ul>
             {/block:Lines}
-			<!-- <hr> -->
+		
 		</li>
     {/block:Chat}
 
@@ -764,7 +806,7 @@ img {
         {block:Description}
 			<p>{Description}</p>
         {/block:Description}
-			<!-- <hr> -->
+			
 		</li>
 	{/block:Link}
 
@@ -782,29 +824,28 @@ img {
 			<h5>- {Asker} </h5>
 
 			<p>{Answer}</p>
-			<!-- <hr> -->
+			
 
 		</li>
     {/block:Answer}
-
-    {block:RebloggedFrom}
+    
+     {block:RebloggedFrom}
     <h1>{ReblogParentTitle}</h1>
-			<h5>Reblogged from <a href="{ReblogRootURL}">{ReblogRootName}</a> via 
-				<a href="{ReblogParentURL}">{ReblogParentName}</a> <a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a> </h5>
+    		<h5>Reblogged from <a href="{ReblogRootURL}">{ReblogRootName}</a> via <a href="{ReblogParentURL}">{ReblogParentName}</a> <a href="{Permalink}">{ShortMonth}{DayOfMonth}, {Year} </a> </h5>
     {/block:RebloggedFrom}
 
     </ul>
 	</div> <!-- .updates -->
 {/block:Posts}
-</div><!--#content_wrapper-->
+</div> <!--#content-wrapper-->
 	</div> <!--.content-->
 
-
 	<div class="footer">
-		
+    
+	
 
-		<div id="pagination">
-		  {block:Pagination}
+    <div id="pagination">
+		 <p> {block:Pagination}
         {block:PreviousPage}
             <a href="{PreviousPage}">Previous</a>
         {/block:PreviousPage}
@@ -825,10 +866,11 @@ img {
         {/block:NextPage}
         
         
-    {/block:Pagination}
-</div> <!--#pagination-->
-<h5>© jamie roth {CopyrightYears}</h5>
-		<p>theme by <a href="http://twitter.com/jamielynnroth">@jamielynnroth</a></p>
+    {/block:Pagination}</p>
+    </div> <!-- #pagination-->
+    
+        <h5>© jamie roth {CopyrightYears}</h5>
+		<p id="credit">theme by <a href="http://twitter.com/jamielynnroth">@jamielynnroth</a></p>
 	</div><!-- .footer -->
 	</div><!-- .wrapper -->
 
